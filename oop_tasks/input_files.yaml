@@ -1,0 +1,88 @@
+- type: square
+  center_x: 0
+  center_y: 0
+  side: 2
+  color: black
+
+- type: circle
+  center_x: 0
+  center_y: 0
+  radius: 50
+  color: blue
+
+- type: circle
+  center_x: 0
+  center_y: 0
+  radius: 100
+  color: green
+
+- type: circle
+  center_x: 0
+  center_y: 0
+  radius: 175
+  color: red
+
+- type: polygon
+  center_x: 0
+  center_y: 0
+  radius: 50
+  sides: 6
+  color: green
+
+- type: polygon
+  center_x: 0
+  center_y: 0
+  radius: 100
+  sides: 6
+  color: red
+
+- type: polygon
+  center_x: 0
+  center_y: 0
+  radius: 175
+  sides: 6
+  color: blue
+
+- type: triangle
+  center_x: 0
+  center_y: 0
+  area: 50
+  color: orange
+
+- type: triangle
+  center_x: 0
+  center_y: 0
+  area: 100
+  color: yellow
+
+- type: triangle
+  center_x: 0
+  center_y: 0
+  area: 175
+  color: black
+
+- type: square
+  center_x: 0
+  center_y: 0
+  side: 100
+  color: green
+
+- type: square
+  center_x: 0
+  center_y: 0
+  side: 200
+  color: red
+
+- type: rectangle
+  center_x: 0
+  center_y: 0
+  width: 450
+  height: 250
+  color: blue
+
+- type: rectangle
+  center_x: 0
+  center_y: 0
+  width: 550
+  height: 350
+  color: black
