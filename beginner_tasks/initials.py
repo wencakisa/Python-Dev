@@ -2,15 +2,12 @@ def get_initials(name):
     name = name.split()
 
     initials_list = [
-        name[i][0] for i in range(len(name)) if name[i][0].isupper()
+        name[i][0]
+        for i in range(len(name))
+        if name[i][0].isupper()
     ]
 
-    initials = ''
-
-    for initial in initials_list:
-        initials += initial + '.'
-
-    return initials
+    return '.'.join(initial for inital in initials_list)
 
 
 def main():
