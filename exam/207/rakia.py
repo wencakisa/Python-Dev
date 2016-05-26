@@ -4,8 +4,8 @@ from math import pi
 
 def main():
     try:
-        litres = 2  # float(input())
-        input_filename = './containers.txt'  # str(input())
+        litres = float(input())
+        input_filename = str(input())
 
         containers = load_data(input_filename)
         print(get_smallest_suitable_container(litres, containers))
@@ -45,7 +45,7 @@ def get_smallest_suitable_container(litres, containers):
             suitable_containers.append((container['name'], capacity))
 
     if suitable_containers:
-        return min(sorted(suitable_containers, key=lambda pair: pair[1]))[0]
+        return min(suitable_containers, key=lambda pair: pair[1])[0]
     else:
         raise ValueError('NO SUITABLE CONTAINERS.')
 
