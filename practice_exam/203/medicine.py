@@ -28,13 +28,10 @@ def load_data(input_filename):
 
 
 def get_fittable(input_data, box_dimensions):
-    fittable = []
-
-    for name, dimensions in input_data:
-        if all(dimensions[dim_index] <= box_dimensions[dim_index] for dim_index in range(3)):
-            fittable.append(name)
-
-    return fittable
+    return [
+        name for name, dimensions in input_data
+        if all(dimensions[dim_index] <= box_dimensions[dim_index] for dim_index in range(3))
+    ]
 
 
 if __name__ == '__main__':
