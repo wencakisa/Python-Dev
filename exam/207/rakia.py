@@ -4,8 +4,8 @@ from math import pi
 
 def main():
     try:
-        litres = 2  # float(input())
-        input_filename = './containers.txt'  # str(input())
+        litres = float(input())
+        input_filename = str(input())
 
         containers = load_data(input_filename)
         print(get_smallest_suitable_container(litres, containers))
