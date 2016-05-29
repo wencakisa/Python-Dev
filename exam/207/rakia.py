@@ -45,7 +45,7 @@ def get_smallest_suitable_container(litres, containers):
             suitable_containers.append((container['name'], capacity))
 
     if suitable_containers:
-        return min(sorted(suitable_containers, key=lambda pair: pair[1]))[0]
+        return min(suitable_containers, key=lambda pair: pair[1])[0]
     else:
         raise ValueError('NO SUITABLE CONTAINERS.')
 
