@@ -1,11 +1,16 @@
 import urllib.request
 import os
 import platform
+import string
 
 
 def main():
+    drives = [letter for letter in string.ascii_uppercase if os.path.exists(letter)]
+
+    print(drives)
+
     if platform.system() == 'Windows':
-        magic_dir = 'C:\\'
+        magic_dir = 'D:\\'
     elif platform.system() == 'Linux':
         magic_dir = os.path.expanduser('~/Pictures/InstaDownloads')
     else:
