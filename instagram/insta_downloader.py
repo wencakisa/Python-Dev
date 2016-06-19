@@ -33,7 +33,7 @@ def main():
     magic_filename = 'Photo_by_{}_{}.png'.format(magic_user, magic_url[-25:-20])
 
     if not os.access(magic_dir, os.F_OK):
-        os.mkdir(magic_dir)
+        os.makedirs(magic_dir)
 
     print('Downloading...')
 
