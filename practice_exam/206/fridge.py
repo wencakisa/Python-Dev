@@ -5,6 +5,7 @@ import csv
 def main():
     input_data = load_data(input())
     opening_dates = get_opening_dates(input_data)
+
     for opening_date in opening_dates:
         print(opening_date)
 

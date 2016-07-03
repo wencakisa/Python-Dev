@@ -4,12 +4,12 @@ import turtle
 from os import path
 
 from json.decoder import JSONDecodeError
-from yaml import YAMLError
+# from yaml import YAMLError
 
-from figures.simple import Circle, Square, Rectangle
-from figures.polygon import RegularPolygon, Triangle, Pie
+from .figures.simple import Circle, Square, Rectangle
+from .figures.polygon import RegularPolygon, Triangle, Pie
 
-from loaders import JSONLoader, YAMLoader
+from .loaders import JSONLoader, YAMLoader
 
 FIGURE_TYPES = {
     'circle': Circle,
@@ -23,6 +23,7 @@ FILE_EXTENSIONS = {
     'json': JSONLoader,
     'yaml': YAMLoader
 }
+
 
 def main():
     if len(sys.argv) < 2:

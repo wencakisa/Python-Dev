@@ -1,44 +1,42 @@
 import sys
 import csv
-from typing import List
+from collections import defaultdict
 
 
 def main():
     try:
-        data = load_data('./city-temperature-data.csv')
-        missing_data = get_missing_data(data)
-        print_missing_data(missing_data)
-        return 0
+        input_filename = 'city-temperature-data.csv'  # input()
+        input_data = load_data(input_filename)
+        missing_data = get_missing_data(input_data)
+
+        if not missing_data:
+            raise Exception('ALL DATA AVAILABLE')
+
+        for date, cities in sorted(missing_data, key=lambda n: n[0]):
+            print(','.join([date] + cities))
+
     except Exception as e:
-        print('INVALID INPUT. {}'.format(str(e)))
+        print('INVALID INPUT: {}'.format(e))
 
 
-def load_data(input_filename: str) -> dict:
+def load_data(input_filename):
     with open(input_filename, encoding='utf-8') as f:
-        loaded_data = {}
-
-        for element in csv.reader(f):
-            date = str(element[0])
-            city = str(element[1])
-
-            if date in loaded_data.keys():
-                loaded_data[date].append(city)
-            else:
-                loaded_data[date] = [city]
-
-        return loaded_data
+        return [(line[0], line[1]) for line in csv.reader(f)]
 
 
-def get_missing_data(data: dict) -> List[str]:
+def get_missing_data(input_data):
+    input_data_dict = defaultdict(list)
+
+    for pair in input_data:
+        input_data_dict[pair[0]].append(pair[1])
+
+    all_cities = set(max(input_data_dict.values()))
+
     return [
-        '{},{}'.format(date, ','.join(set(max(data.values())).difference(set(cities))))
-        for date, cities in sorted(list(data.items()), key=lambda n: n[0])
-        if len(cities) != len(max(data.values()))
+        (date, list(all_cities.difference(set(cities))))
+        for date, cities in input_data_dict.items()
+        if len(cities) != len(all_cities)
     ]
-
-
-def print_missing_data(missing_data: list) -> None:
-    [print(msg) for msg in missing_data] if missing_data else print('ALL DATA AVAILABLE')
 
 
 if __name__ == '__main__':
