@@ -1,4 +1,5 @@
 import sys
+import string
 
 
 def main():
@@ -7,16 +8,15 @@ def main():
         msg = str(input())
         print(get_secret_msg(key, msg))
         return 0
-    except Exception as e:
+    except Exception:
         print('INVALID INPUT')
 
 
 def get_secret_msg(key, msg):
-    msg = msg.upper()
-    normal_alphabet = ''.join(chr(i) for i in range(65, 91))
-    secret_alphabet = normal_alphabet[key:] + normal_alphabet[:key]
+    alphabet = string.ascii_uppercase
+    crypt_alphabet = alphabet[key:] + alphabet[:key]
 
-    return ''.join(secret_alphabet[normal_alphabet.find(symbol)] if symbol.isalpha() else symbol for symbol in msg)
+    return ''.join(crypt_alphabet[alphabet.find(symbol)] if symbol.isalpha() else symbol for symbol in msg.upper())
 
 
 if __name__ == '__main__':

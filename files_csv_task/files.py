@@ -3,35 +3,35 @@ logging.basicConfig(filename='errors.log', level=logging.DEBUG)
 
 
 def split_csv_file(file: str):
-    splitted = []
+    result = []
 
     with open(file) as f:
         lines = f.readlines()
 
         for index, line in enumerate(lines):
             if line.rstrip():
-                splitted.append(line.split(','))
+                result.append(line.split(','))
             else:
                 logging.warning('Invalid line detected on {}'.format(index))
 
-    return splitted
+    return result
 
 
-def get_average_price(splitted_list: list):
+def get_average_price(input_data: list):
     total_price = 0
 
-    for info in splitted_list:
+    for info in input_data:
         total_price += float(info[-1].strip())
 
-    avg_price = total_price / len(splitted_list)
+    avg_price = total_price / len(input_data)
 
     return round(avg_price, 2)
 
 
-def get_by_gender(splitted_list: list, gender: str):
+def get_by_gender(input_data: list, gender: str):
     gender_list = []
 
-    for info in splitted_list:
+    for info in input_data:
         if info[len(info) - 2] == gender:
             gender_list.append(info)
 
@@ -39,13 +39,13 @@ def get_by_gender(splitted_list: list, gender: str):
 
 
 def grouped_by_gender(file: str):
-    splitted = split_csv_file(file)
+    result = split_csv_file(file)
     genders = ['Infant', 'Men', 'Kid', 'Unisex', 'Woman']
     genders_dict = {}
 
     for gender in genders:
         genders_dict[gender] = get_average_price(
-            get_by_gender(splitted, gender)
+            get_by_gender(result, gender)
         )
 
     return genders_dict

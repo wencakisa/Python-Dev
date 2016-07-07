@@ -123,11 +123,11 @@ def print_summary(sales: list) -> None:
         '''
 Summary
 -------
-    Sales : {}
-    Sales sum : {}€
-    Average sales price : {}€
-    Starting date : {}
-    Ending date : {}
+        Sales : {}
+        Sales sum : {}€
+        Average sales price : {}€
+        Starting date : {}
+        Ending date : {}
         '''.format(sales_count, sales_sum, avg_sales_sum, starting_date, ending_date)
     )
 

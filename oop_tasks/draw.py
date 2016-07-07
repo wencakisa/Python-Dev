@@ -4,7 +4,7 @@ import turtle
 from os import path
 
 from json.decoder import JSONDecodeError
-# from yaml import YAMLError
+from yaml import YAMLError
 
 from .figures.simple import Circle, Square, Rectangle
 from .figures.polygon import RegularPolygon, Triangle, Pie
@@ -19,6 +19,7 @@ FIGURE_TYPES = {
     'polygon': RegularPolygon,
     'pie': Pie
 }
+
 FILE_EXTENSIONS = {
     'json': JSONLoader,
     'yaml': YAMLoader
@@ -46,7 +47,6 @@ def main():
 
 
 def load_input_data(input_filename):
-    input_data = []
     extension = path.splitext(input_filename)[1][1:]
 
     if extension in FILE_EXTENSIONS:
