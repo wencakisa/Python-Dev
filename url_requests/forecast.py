@@ -1,6 +1,6 @@
 import sys
 import requests
-from datetime import datetime
+from datetime import datetime, timezone
 from decimal import Decimal
 
 API_URL = 'http://api.openweathermap.org/data/2.5/weather?q={}&appid=965acdac1ae64cf06761bb563ad34d96'
@@ -19,6 +19,7 @@ def main():
         print('Unknown city: {}'.format(city))
         return 1
 
+    timestamp = city_info_dict.get('dt')
     main_info = city_info_dict.get('main')
 
     temp = Decimal(main_info.get('temp') - KELVIN_TO_CELSIUS_SUBTRACT)
@@ -36,7 +37,7 @@ Pressure: {}p
 Humidity: {}%
 Wind speed: {}m/s
 '''.format(
-        datetime.now().replace(minute=0).strftime('%d-%m-%Y %H:%M'),
+        datetime.fromtimestamp(timestamp=timestamp, tz=timezone.utc).strftime('%d-%m-%Y %H:%M'),
         temp,
         pressure,
         humidity,
