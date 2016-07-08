@@ -1,4 +1,4 @@
-from urllib.request import urlopen, urlretrieve
+import requests
 import os
 import platform
 import sys
@@ -20,8 +20,8 @@ def main():
         raise Exception('OS not supported.')
 
     original_url = str(input('Enter picture URL: ')).strip()
-    f = urlopen(original_url)
-    html_code = str(f.read().decode('utf-8')).strip()
+    f = requests.get(original_url)
+    html_code = f.text
 
     start_index = html_code.find(OPENING_SCRIPT_TAG)
 
@@ -57,7 +57,9 @@ def main():
     print('Downloading...')
 
     os.chdir(directory)
-    urlretrieve(photo_url, filename)
+
+    with open(filename, 'wb') as f:
+        f.write(requests.get(photo_url).content)
 
     print('Photo successfully downloaded in {}'.format(directory))
 
