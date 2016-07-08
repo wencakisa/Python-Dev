@@ -53,10 +53,10 @@ def main():
 
     if not os.access(directory, os.F_OK):
         os.makedirs(directory)
+        
+    os.chdir(directory)
 
     print('Downloading...')
-
-    os.chdir(directory)
 
     with open(filename, 'wb') as f:
         f.write(requests.get(photo_url).content)
