@@ -10,6 +10,7 @@ POST_COMMENT_URL = 'https://graph.facebook.com/{}/comments?message={}&access_tok
 
 def main():
     print('. . . Collecting posts . . .')
+
     resp = requests.get(GET_POSTS_URL)
     posts_json = resp.json().get('data')
 
