@@ -53,9 +53,14 @@ def main():
 
     if not os.access(directory, os.F_OK):
         os.makedirs(directory)
-
+        
     os.chdir(directory)
 
+<<<<<<< HEAD
+    os.chdir(directory)
+
+=======
+>>>>>>> 7f0174b56d26bdea5eceab64ec2a689637414b54
     print('Downloading...')
 
     with open(filename, 'wb') as f:
