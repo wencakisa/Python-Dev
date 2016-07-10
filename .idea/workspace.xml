@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="787d7353-1d82-4ef7-8494-06f7a9ce2565" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/facebook_thanker/access_token.txt" afterPath="$PROJECT_DIR$/facebook_thanker/access_token.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/facebook_thanker/thanker.py" afterPath="$PROJECT_DIR$/facebook_thanker/thanker.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/instagram_downloader/insta_downloader.py" afterPath="$PROJECT_DIR$/instagram_downloader/insta_downloader.py" />
     </list>
     <ignored path="Softuni.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,14 +24,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="insta_downloader.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/instagram_downloader/insta_downloader.py">
+      <file leaf-file-name="thanker.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/facebook_thanker/thanker.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+            <state relative-caret-position="364">
+              <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
               <folding>
-                <element signature="e#0#15#0" expanded="true" />
+                <element signature="e#0#10#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="access_token.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/facebook_thanker/access_token.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="178" selection-start-line="0" selection-start-column="178" selection-end-line="0" selection-end-column="178" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -52,7 +61,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/exam/207/containers.txt" />
         <option value="$PROJECT_DIR$/exam/103/flacons.py" />
         <option value="$PROJECT_DIR$/exam/205/words.txt" />
         <option value="$PROJECT_DIR$/exam/103/flask.py" />
@@ -102,6 +110,7 @@
         <option value="$PROJECT_DIR$/facebook/access_token.txt" />
         <option value="$PROJECT_DIR$/instagram/insta_downloader.py" />
         <option value="$PROJECT_DIR$/instagram_downloader/insta_downloader.py" />
+        <option value="$PROJECT_DIR$/facebook_thanker/access_token.txt" />
         <option value="$PROJECT_DIR$/facebook_thanker/thanker.py" />
       </list>
     </option>
@@ -180,20 +189,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="instagram_downloader" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Python-Dev" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Python-Dev" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="facebook_thanker" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -221,7 +216,7 @@
       <recent name="$PROJECT_DIR$/practice" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.insta_downloader">
+  <component name="RunManager" selected="Python.thanker">
     <configuration default="false" name="insta_downloader" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -280,12 +275,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/facebook" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/facebook_thanker" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Python-Dev" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/facebook/thanker.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/facebook_thanker/thanker.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -435,8 +430,8 @@
     </list>
     <recent_temporary>
       <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="Python.insta_downloader" />
-        <item index="1" class="java.lang.String" itemvalue="Python.thanker" />
+        <item index="0" class="java.lang.String" itemvalue="Python.thanker" />
+        <item index="1" class="java.lang.String" itemvalue="Python.insta_downloader" />
         <item index="2" class="java.lang.String" itemvalue="Python.forecast" />
         <item index="3" class="java.lang.String" itemvalue="Python.currency_convertor" />
       </list>
@@ -464,7 +459,7 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.159375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30990416" sideWeight="0.50208336" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30990416" sideWeight="0.50208336" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901832" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30990416" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
@@ -518,13 +513,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/practice_exam/205/words.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/exam/206/krasiv.py" />
     <entry file="file://$PROJECT_DIR$/practice_exam/206/fridge-temp.csv">
       <provider selected="true" editor-type-id="text-editor">
@@ -802,22 +790,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/facebook_thanker/thanker.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/instagram_downloader/insta_downloader.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="486">
           <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/facebook_thanker/access_token.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="178" selection-start-line="0" selection-start-column="178" selection-end-line="0" selection-end-column="178" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/facebook_thanker/thanker.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
