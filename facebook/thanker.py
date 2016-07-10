@@ -13,11 +13,12 @@ def main():
 
     resp = requests.get(GET_POSTS_URL)
     posts_json = resp.json().get('data')
+    print(posts_json)
 
     post_requests = [
         post.get('id')
         for post in posts_json
-        if post.get('to') is not None  # If the post is from a friend
+        if post.get('from') is not None  # If the post is from a friend
         if post.get('comments') is None  # If there are no comments on this post
     ]
 
