@@ -1,6 +1,4 @@
 import requests
-import os
-import platform
 import sys
 
 OPENING_SCRIPT_TAG = '<script type="text/javascript">window._sharedData = '
@@ -12,16 +10,9 @@ FILENAME_FORMAT = 'Photo_by_{}_{}.jpg'
 
 
 def main():
-    if platform.system() == 'Windows':
-        directory = 'D:\\'
-    elif platform.system() == 'Linux':
-        directory = os.path.expanduser('~/Pictures/InstaDownloads')
-    else:
-        raise Exception('OS not supported.')
-
     original_url = str(input('Enter picture URL: ')).strip()
-    f = requests.get(original_url)
-    html_code = f.text
+    resp = requests.get(original_url)
+    html_code = resp.text
 
     start_index = html_code.find(OPENING_SCRIPT_TAG)
 
@@ -47,21 +38,16 @@ def main():
     photo_url_end_index = owner_info.find('",', photo_url_start_index)
 
     photo_url = owner_info[photo_url_start_index + len(PHOTO_URL_PREFIX): photo_url_end_index]
-    special_id = photo_url[-25:-20]
+    special_id = photo_url[-25: -20]
 
     filename = FILENAME_FORMAT.format(username, special_id)
-
-    if not os.access(directory, os.F_OK):
-        os.makedirs(directory)
-        
-    os.chdir(directory)
 
     print('Downloading...')
 
     with open(filename, 'wb') as f:
         f.write(requests.get(photo_url).content)
 
-    print('Photo successfully downloaded in {}'.format(directory))
+    print('Photo successfully downloaded!')
 
 if __name__ == '__main__':
     sys.exit(main())
