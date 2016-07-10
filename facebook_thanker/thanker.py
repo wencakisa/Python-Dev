@@ -1,14 +1,6 @@
 import sys
 import requests
 
-
-"""
-    Instructions:
-        In the file access_token.txt put your access token!
-            -> Visit: http://developers.facebook.com/tools/explorer/
-                -> Click on 'Get access token' and mark all the fields.
-"""
-
 with open('access_token.txt', 'r') as f:
     ACCESS_TOKEN = str(f.readline())
 
