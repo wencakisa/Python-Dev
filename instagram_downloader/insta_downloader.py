@@ -44,7 +44,9 @@ def main():
 
     filename = FILENAME_FORMAT.format(username, special_id)
 
-    os.mkdir(DESTINATION_FOLDER_NAME)
+    if not os.path.isdir(DESTINATION_FOLDER_NAME):
+        os.mkdir(DESTINATION_FOLDER_NAME)
+
     os.chdir(DESTINATION_FOLDER_NAME)
 
     print('Downloading...')
