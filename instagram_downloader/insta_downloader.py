@@ -8,7 +8,7 @@ OWNER_PREFIX = '"owner": '
 USERNAME_PREFIX = '"username": "'
 PHOTO_URL_PREFIX = '"display_src": "'
 FILENAME_FORMAT = 'Photo_by_{}_{}.jpg'
-DESTINATION_FOLDER_NAME = 'downloads'
+DESTINATION_FOLDER_NAME = os.path.dirname(os.path.realpath(__file__)) + '/downloads'
 
 
 def main():
@@ -54,7 +54,7 @@ def main():
     with open(filename, 'wb') as f:
         f.write(requests.get(photo_url).content)
 
-    print('Photo successfully downloaded!')
+    print('Photo successfully downloaded in {}'.format(DESTINATION_FOLDER_NAME))
 
 if __name__ == '__main__':
     sys.exit(main())
