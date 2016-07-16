@@ -155,9 +155,11 @@ def main():
         if test_sales_data(sales):
             print_summary(sales)
             print_top(catalog, sales, 7)
+
+        return 0
     except Exception as e:
         print('Error: {}'.format(str(e)))
         return 1
 
 if __name__ == '__main__':
-    sys.exit(int(main() or 0))
+    sys.exit(main())
