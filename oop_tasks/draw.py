@@ -1,5 +1,5 @@
 import sys
-import turtle
+from turtle import Turtle, done
 
 from os import path
 
@@ -35,6 +35,7 @@ def main():
         input_data = load_input_data(sys.argv[1])
         figures = create_figures(input_data)
         draw_figures(figures)
+        return 0
     except IOError as ioe:
         print(str(ioe))
         return 2
@@ -75,11 +76,11 @@ def create_figures(input_data):
 
 def draw_figures(figures):
     for figure in figures:
-        t = turtle.Turtle()
+        t = Turtle()
         t.speed('slow')
         figure.draw_figure(t)
 
-    turtle.exitonclick()
+    done()
     
 
 if __name__ == "__main__":
