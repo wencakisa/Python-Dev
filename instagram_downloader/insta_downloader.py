@@ -13,6 +13,7 @@ DESTINATION_FOLDER_NAME = os.path.dirname(os.path.realpath(__file__)) + '/downlo
 
 def main():
     original_url = str(input('Enter picture URL: ')).strip()
+
     resp = requests.get(original_url)
     html_code = resp.text
 
@@ -55,6 +56,8 @@ def main():
         f.write(requests.get(photo_url).content)
 
     print('Photo successfully downloaded in {}'.format(DESTINATION_FOLDER_NAME))
+
+    return 0
 
 if __name__ == '__main__':
     sys.exit(main())
