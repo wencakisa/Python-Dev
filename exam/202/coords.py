@@ -13,28 +13,23 @@ STEP_DIRECTION_Y_MAPPING = {
 
 def main():
     try:
-        input_filename = './steps.txt'
+        input_filename = input()
+
         with open(input_filename, encoding='utf-8') as f:
             steps_x_y = list(load_steps_as_x_y(f))
             if steps_x_y:
                 print('X {:.3f}'.format(sum(i[0] for i in steps_x_y)))
                 print('Y {:.3f}'.format(sum(i[1] for i in steps_x_y)))
             else:
-                raise ValueError("Empty input file")
+                raise ValueError('Empty input file')
+
         return 0
-    except Exception as e:
-        print("Error: {}".format(str(e)))
+    except Exception:
+        print('INVALID INPUT')
+        return 1
 
 
 def load_steps_as_x_y(input_file):
-    """
-    Returns a list of tuples (step_x, step_y)
-
-    :param input_file:
-    :type input_file:
-    :return:
-    :rtype:
-    """
     for line in input_file:
         line = line.strip()
         if line:

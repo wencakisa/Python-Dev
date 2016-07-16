@@ -11,8 +11,9 @@ def main():
         print(get_smallest_suitable_container(litres, containers))
 
         return 0
-    except Exception as e:
-        print('INVALID INPUT. {}'.format(str(e)))
+    except Exception:
+        print('INVALID INPUT')
+        return 1
 
 
 def load_data(input_filename):
