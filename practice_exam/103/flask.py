@@ -5,10 +5,13 @@ def main():
     try:
         wall_w = float(input())
         wall_h = float(input())
+
         print(count_flasks_to_paint(wall_w, wall_h))
+
         return 0
-    except Exception as e:
-        print('Error: {}'.format(str(e)))
+    except Exception:
+        print('INVALID INPUT')
+        return 1
 
 
 def count_flasks_to_paint(wall_w, wall_h):

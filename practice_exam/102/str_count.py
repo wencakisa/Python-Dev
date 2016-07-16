@@ -5,7 +5,7 @@ from collections import Counter
 def main():
     try:
         print(Counter(str(input()).strip()).most_common(1)[0][0])
-    except Exception as e:
+    except Exception:
         print('INVALID INPUT')
 
 

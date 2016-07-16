@@ -6,10 +6,13 @@ def main():
     try:
         key = int(input())
         msg = str(input())
+
         print(get_secret_msg(key, msg))
+
         return 0
     except Exception:
         print('INVALID INPUT')
+        return 1
 
 
 def get_secret_msg(key, msg):

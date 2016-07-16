@@ -5,12 +5,16 @@ def main():
     try:
         input_filename = str(input())
         word_to_search = str(input())
+
         input_data = load_input_data(input_filename)
         anagrams = get_anagrams(input_data, word_to_search)
+
         print_anagrams(anagrams)
+
         return 0
     except Exception:
         print('INVALID INPUT')
+        return 1
 
 
 def load_input_data(input_filename):

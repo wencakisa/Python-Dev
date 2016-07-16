@@ -5,6 +5,7 @@ import csv
 def main():
     product_id = input()
     sales_filename = input()
+
     sales_data = load_sales_data(product_id, sales_filename)
     print(get_city_with_less_price(sales_data))
 

@@ -9,8 +9,11 @@ def main():
         c = float(input())
 
         print('{:.2f}'.format(get_area(a, b, c)))
-    except Exception as e:
+
+        return 0
+    except Exception:
         print('INVALID INPUT')
+        return 1
 
 
 def get_area(a, b, c):

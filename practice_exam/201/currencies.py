@@ -14,8 +14,10 @@ def main():
         for price in converted_data:
             print('{:.2f}'.format(price))
 
+        return 0
     except Exception:
         print('INVALID INPUT')
+        return 1
 
 
 def load_exchange_data(exchange_filename):
