@@ -4,10 +4,13 @@ import os
 
 OPENING_SCRIPT_TAG = '<script type="text/javascript">window._sharedData = '
 CLOSING_SCRIPT_TAG = '</script>'
+
 OWNER_PREFIX = '"owner": '
 USERNAME_PREFIX = '"username": "'
 PHOTO_URL_PREFIX = '"display_src": "'
+
 FILENAME_FORMAT = 'Photo_by_{}_{}.jpg'
+
 DESTINATION_FOLDER_NAME = os.path.dirname(os.path.realpath(__file__)) + '/downloads'
 
 
