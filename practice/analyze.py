@@ -115,6 +115,7 @@ def print_summary(sales: list) -> None:
     sales_count = len(sales)
     sales_sum = sum(sales_item['price'] for sales_item in sales)
     avg_sales_sum = sales_sum / sales_count
+
     dates = [el['sale_timestamp'] for el in sales]
     starting_date = min(dates)
     ending_date = max(dates)

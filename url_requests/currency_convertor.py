@@ -10,7 +10,7 @@ def main():
     base_currency = str(input('From: '))
     base_amount = Decimal(input('Enter amount: '))
     target_currency = str(input('To: '))
-    date = str(input('From date (yyyy/mm/dd): '))
+    date = str(input('From date (yyyy-mm-dd): '))
 
     print('. . . Getting exchange rates . . .')
     resp = requests.get(API_URL.format(date, base_currency), timeout=API_TIMEOUT)
@@ -22,7 +22,7 @@ def main():
     exchange_rates = resp.json().get('rates', {})
     exchange_rate_to_target_currency = exchange_rates.get(target_currency, None)
 
-    if exchange_rate_to_target_currency is not None:
+    if exchange_rate_to_target_currency:
         exchange_rate_to_target_currency = Decimal(exchange_rate_to_target_currency)
     else:
         print('Unknown currency: {}'.format(target_currency))

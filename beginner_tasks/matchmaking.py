@@ -1,38 +1,3 @@
-def matchmaking(people):
-    males = []
-    females = []
-    matchmaked = []
-
-    for person in people:
-        if person.get('gender', None) == 'male':
-            males.append(person)
-        else:
-            females.append(person)
-
-    for male in males:
-        for female in females:
-            male_interests = set(male['interests'])
-            female_interests = set(female['interests'])
-
-            male_exs = set(male['ex'])
-            female_exs = set(female['ex'])
-
-            interests = male_interests.intersection(female_interests)
-            exs = male_exs.intersection(female_exs)
-            age_difference = abs(male['age'] - female['age'])
-
-            if interests and not exs and age_difference < 6:
-                matchmaked.append({
-                    "male": [male['name'], male['age']],
-                    "female": [female['name'], female['age']],
-                    "interests": list(interests)
-                })
-
-                break
-
-    matchmaked_sorted = sorted(matchmaked, key=lambda k: k['male'][0])
-    return matchmaked_sorted
-
 
 def main():
     people = [
@@ -172,11 +137,49 @@ def main():
         for k, v in matchmaked[i].items():
             if k == 'male' or k == 'female':
                 print('\t{}{}: \n\t\t-> Name: {} \n\t\t-> Age: {}'.format(
-                    k[0].upper(), k[1:len(k)], v[0], v[1]))
+                    k[0].upper(), k[1:], v[0], v[1]))
             else:
                 print('\tInterests: ')
                 for interest in v:
                     print('\t\t-> {}'.format(interest))
+
+
+def matchmaking(people):
+    males = []
+    females = []
+
+    matchmaked = []
+
+    for person in people:
+        if person.get('gender', None) == 'male':
+            males.append(person)
+        else:
+            females.append(person)
+
+    for male in males:
+        for female in females:
+            male_interests = set(male['interests'])
+            female_interests = set(female['interests'])
+
+            male_exs = set(male['ex'])
+            female_exs = set(female['ex'])
+
+            interests = male_interests.intersection(female_interests)
+            exs = male_exs.intersection(female_exs)
+            age_difference = abs(male['age'] - female['age'])
+
+            if interests and not exs and age_difference < 6:
+                matchmaked.append(
+                    {
+                        "male": (male['name'], male['age']),
+                        "female": (female['name'], female['age']),
+                        "interests": tuple(interests)
+                    }
+                )
+
+                break
+
+    return sorted(matchmaked, key=lambda k: k['male'][0])
 
 if __name__ == '__main__':
     main()
