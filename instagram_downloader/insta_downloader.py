@@ -11,13 +11,37 @@ PHOTO_URL_PREFIX = '"display_src": "'
 
 FILENAME_FORMAT = 'Photo_by_{}_{}.jpg'
 
-DESTINATION_FOLDER_NAME = os.path.dirname(os.path.realpath(__file__)) + '/downloads'
-
 
 def main():
-    original_url = str(input('Enter picture URL: ')).strip()
+    if len(sys.argv) != 3:
+        print('Usage: <script> <destination_path> <picture_url>')
+        return 1
 
-    resp = requests.get(original_url)
+    destination_path = os.path.expanduser(sys.argv[1])
+
+    if not os.path.isdir(destination_path):
+        while True:
+            choice = str(input('{} does not exists. Do you want to create it? (Y/n) '.format(destination_path))).lower()
+
+            if choice == 'y':
+                os.mkdir(destination_path)
+                break
+            elif choice == 'n':
+                print('Exiting...')
+                return 2
+            else:
+                print('Invalid choice...')
+
+    os.chdir(destination_path)
+
+    original_url = sys.argv[2]
+
+    try:
+        resp = requests.get(original_url)
+    except ConnectionError:
+        print('Invalid URL provided.')
+        return 1
+
     html_code = resp.text
 
     start_index = html_code.find(OPENING_SCRIPT_TAG)
@@ -48,17 +72,12 @@ def main():
 
     filename = FILENAME_FORMAT.format(username, special_id)
 
-    if not os.path.isdir(DESTINATION_FOLDER_NAME):
-        os.mkdir(DESTINATION_FOLDER_NAME)
-
-    os.chdir(DESTINATION_FOLDER_NAME)
-
     print('Downloading...')
 
     with open(filename, 'wb') as f:
         f.write(requests.get(photo_url).content)
 
-    print('Photo successfully downloaded in {}'.format(DESTINATION_FOLDER_NAME))
+    print('Photo successfully downloaded in {}'.format(destination_path))
 
     return 0
 
