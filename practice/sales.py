@@ -1,5 +1,6 @@
 from decimal import Decimal, InvalidOperation
 from datetime import timezone
+from typing import List
 
 import iso8601
 
@@ -32,7 +33,7 @@ def load_sales_data(gen) -> list:
     ]
 
 
-def test_sales_data(sales) -> bool:
+def test_sales_data(sales: List[dict]) -> bool:
     for sale in sales:
         try:
             sale[KEY_ITEM_TS] = iso8601.parse_date(sale[KEY_ITEM_TS]).astimezone(timezone.utc)
